@@ -1,0 +1,13 @@
+export const CircleImg = "/circle.svg";
+export const ReduxImg = "/redux.png";
+export const NodeImg = "/node.png";
+export const SpringImg = "/spring.png";
+export const AboutBG = "/aboutBg.png";
+export const AboutProfile = "/aboutprofile.png";
+export const ReactImg = "/react.png";
+export const AboutImg1 = "/about1.jpg";
+export const AboutImg2 = "/about2.jpg";
+export const AboutImg3 = "/about3.jpg";
+export const AboutImg4 = "/about4.jpg";
+export const AboutImg5 = "/about5.jpg";
+export const GoTop = "/GoTop.png";

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .heroBtnClass {
+    @apply px-6 py-2 border bg-indigo-800/50 border-indigo-800/50 text-white rounded-full uppercase text-xs tracking-widest  transition-all  hover:border-indigo-800/80 hover:text-white hover:bg-indigo-800/80 mr-2;
+  }
+  .contactInput {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4  text-gray-600 placeholder-gray-600 transition-all focus:border-secondary focus:text-primary hover:border-secondary;
+  }
+}
+/* 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
