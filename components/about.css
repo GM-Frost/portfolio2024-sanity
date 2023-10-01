@@ -241,7 +241,7 @@
   }
 }
 
-@media screen and (min-width: 810px) {
+@media screen and (max-width: 810px) {
   .app__header-badge {
     padding: 0rem;
   }
