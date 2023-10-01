@@ -8,6 +8,18 @@ type Props = {
 };
 
 const WorkExperience = ({ experiences }: Props) => {
+  const sortedExperiences = [...experiences].sort((a, b) => {
+    const endDateA = a.isCurrentlyWorkingHere
+      ? new Date() // Treat as current date if "Present"
+      : new Date(a.dateEnded || a.dateStarted);
+
+    const endDateB = b.isCurrentlyWorkingHere
+      ? new Date() // Treat as current date if "Present"
+      : new Date(b.dateEnded || b.dateStarted);
+
+    return endDateB.getTime() - endDateA.getTime();
+  });
+
   return (
     <>
       <motion.div
@@ -20,7 +32,7 @@ const WorkExperience = ({ experiences }: Props) => {
           Work Experience
         </h3>
         <div className="absolute top-52 w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-100/50 scrollbar-thumb-secondary">
-          {experiences?.map((experience) => (
+          {sortedExperiences?.map((experience) => (
             <ExperienceCard key={experience._id} experience={experience} />
           ))}
         </div>
