@@ -13,6 +13,7 @@ import {
   About,
   Experience,
   ISkill,
+  ITopTech,
   PageInfo,
   Project,
   Social,
@@ -25,42 +26,43 @@ import { fetchAboutInfo } from "@/utils/fetchAboutInfo";
 import { fetchExperiences } from "@/utils/fetchExperiences";
 import { fetchProjects } from "@/utils/fetchProjects";
 import MySkills from "@/components/MySkills";
+import { fetchTopTech } from "@/utils/fetchTopTech";
 
 type Props = {};
 
 const HomePage = (props: Props) => {
   const [allSkillsData, setSkillsData] = useState<ISkill[]>([]);
   const [socialIconsData, setSocialIconsData] = useState<Social[]>([]);
+  const [topTechsData, setTopTechsData] = useState<ITopTech[]>([]);
   const [profileInfo, setProfileInfo] = useState<PageInfo | null>(null);
   const [aboutInfoData, setAboutInfoData] = useState<About[]>([]);
   const [experiencesData, setExperiencesData] = useState<Experience[]>([]);
   const [projectsData, setProjectsData] = useState<Project[]>([]);
+
   useEffect(() => {
     const fetchData = async () => {
-      const skillsData = await fetchSkills();
-      const socialIcons = await fetchSocial();
-      const pageInfo = await fetchPageInfo();
-      const aboutInfos = await fetchAboutInfo();
-      const experiencesInfo = await fetchExperiences();
-      const projects = await fetchProjects();
-
-      setSkillsData(skillsData);
-      setSocialIconsData(socialIcons);
-      setProfileInfo(pageInfo);
-      setAboutInfoData(aboutInfos);
-      setExperiencesData(experiencesInfo);
-      setProjectsData(projects);
+      try {
+        const pageInfo = await fetchPageInfo();
+        setProfileInfo(pageInfo);
+        const topTechData = await fetchTopTech();
+        setTopTechsData(topTechData);
+        const skillsData = await fetchSkills();
+        setSkillsData(skillsData);
+        const socialIcons = await fetchSocial();
+        setSocialIconsData(socialIcons);
+        const aboutInfos = await fetchAboutInfo();
+        setAboutInfoData(aboutInfos);
+        const experiencesInfo = await fetchExperiences();
+        setExperiencesData(experiencesInfo);
+        const projects = await fetchProjects();
+        setProjectsData(projects);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
 
     fetchData();
-  }, [
-    allSkillsData,
-    socialIconsData,
-    profileInfo,
-    aboutInfoData,
-    experiencesData,
-    projectsData,
-  ]);
+  }, []);
 
   return (
     <>
@@ -75,7 +77,7 @@ const HomePage = (props: Props) => {
         {/* ABOUT SECTION */}
 
         <section id="greetings" className="snap-start">
-          <Greetings pageInfo={profileInfo} />
+          <Greetings pageInfo={profileInfo} topTech={topTechsData} />
         </section>
         <section id="about" className="snap-center">
           <AboutSection aboutInfo={aboutInfoData} />

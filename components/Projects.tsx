@@ -16,7 +16,7 @@ const Projects = ({ projects }: Props) => {
         <h3 className="absolute top-16 md:top-[80px] uppercase tracking-[15px] text-gray-600 text-2xl">
           Projects
         </h3>
-        <h3 className="absolute top-[120px] md:top-30 uppercase tracking-[3px] text-gray-600 text-xl mb-10">
+        <h3 className="absolute top-[120px] text-sm md:text-lg xl:text-lg md:top-30 uppercase tracking-[3px] text-gray-600  mb-10">
           My Creative{" "}
           <span className="text-indigo-600 underline decoration-orange-300 font-bold">
             Portfolio

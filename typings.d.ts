@@ -25,7 +25,12 @@ export interface PageInfo extends SanityBody {
   email: string;
   address: string;
   socials: string[];
-  topTechnology: ISkill[];
+}
+
+export interface ITopTech extends SanityBody {
+  _type: "topTech";
+  title: string;
+  image: Image;
 }
 
 export interface ISkill extends SanityBody {

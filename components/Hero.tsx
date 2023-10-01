@@ -2,7 +2,7 @@
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircle from "./BackgroundCircle";
 import Link from "next/link";
-import { PageInfo } from "@/typings";
+import { ITopTech, PageInfo } from "@/typings";
 import { urlFor } from "@/sanity";
 
 type Props = {

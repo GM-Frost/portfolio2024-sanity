@@ -165,24 +165,45 @@
     margin: 1rem;
   }
 }
-@media screen and (min-width: 450px) {
+@media screen and (max-width: 450px) {
   .app__header {
     padding: 6rem 1rem 2rem;
   }
-  .app__header-circles div:nth-child(1),
-  .app__header-circles div:nth-child(2),
-  .app__header-circles div:nth-child(3),
-  .app__header-circles div:nth-child(4) {
-    width: 100px;
-    height: 100px;
+  .app__header-circles .circle-cmp:nth-child(1),
+  .app__header-circles .circle-cmp:nth-child(2),
+  .app__header-circles .circle-cmp:nth-child(3),
+  .app__header-circles .circle-cmp:nth-child(4) {
+    width: 50px;
+    height: 50px;
   }
 
   .app__header-img {
     padding: 6rem 1rem 2rem;
   }
-  .app__header-circles div {
+  .app__header-circles .circle-cmp {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media screen and (max-width: 396px) {
+  .app__header {
+    padding: 6rem 1rem 2rem;
+  }
+  .app__header-circles .circle-cmp:nth-child(1),
+  .app__header-circles .circle-cmp:nth-child(2),
+  .app__header-circles .circle-cmp:nth-child(3),
+  .app__header-circles .circle-cmp:nth-child(4) {
+    width: 40px;
+    height: 40px;
+  }
+
+  .app__header-img {
+    padding: 1rem 1rem 2rem;
+  }
+  .app__header-circles .circle-cmp {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -204,10 +225,44 @@
   .tag-cmp {
     margin-top: 12px;
   }
+  .app__header-img {
+    padding: 1rem 1rem 2rem;
+  }
 
   .badge-cmp .nameclass {
     font-size: 20px;
   }
+  .app__header-circles div:nth-child(1),
+  .app__header-circles div:nth-child(2),
+  .app__header-circles div:nth-child(3),
+  .app__header-circles div:nth-child(4) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 810px) {
+  .app__header-badge {
+    padding: 0rem;
+  }
+  .app__header-img {
+    justify-content: center;
+    align-items: center;
+  }
+  .app__header-img img {
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+  }
+  .app__header-info {
+    height: 10%;
+    font-size: 12px;
+  }
+  .badge-cmp,
+  .tag-cmp {
+    font-size: 12px;
+  }
+
   .app__header-circles div:nth-child(1),
   .app__header-circles div:nth-child(2),
   .app__header-circles div:nth-child(3),

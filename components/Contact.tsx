@@ -23,16 +23,16 @@ const Contact = (props: Props) => {
   return (
     <>
       <div className="h-screen  p-4 md:p-10  flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-        <h3 className="absolute top-16 md:top-24 uppercase tracking-[15px] text-gray-500 text-2xl md:text-4xl">
+        <h3 className="absolute top-24 md:top-24 uppercase tracking-[15px] text-gray-500 text-2xl md:text-4xl">
           Contact
         </h3>
-        <div className="flex flex-col space-y-8 md:space-y-10 text-center md:text-left">
-          <h4 className="text-2xl md:text-4xl font-semibold">
-            I have got just what you need{" "}
-            <span className="decoration-secondary underline">
-              Let&lsquo;s talk
-            </span>
-          </h4>
+        <h4 className="absolute top-36 text-2xl md:text-4xl font-semibold">
+          I have got just what you need{" "}
+          <span className="decoration-secondary underline">
+            Let&lsquo;s talk
+          </span>
+        </h4>
+        <div className="absolute top-56 flex flex-col space-y-8 md:space-y-10 text-center md:text-left">
           <div className="space-y-8 md:space-y-10">
             <div className="flex items-center space-x-2 md:space-x-5">
               <MdMarkEmailRead className="text-secondary h-5 w-5 md:h-7 md:w-7 animate-bounce" />

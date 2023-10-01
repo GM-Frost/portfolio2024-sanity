@@ -50,12 +50,6 @@ export default {
       type: 'array',
       of: [{type: 'reference', to: {type: 'social'}}],
     },
-    {
-      name: 'topTechnology',
-      title: 'Top 4 Technology',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'skill'}}],
-      validation: (Rule: any) => Rule.max(4).error('You can select a maximum of 4 technologies.'),
-    },
+   
   ],
 }

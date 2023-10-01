@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./about.css";
 import {
@@ -10,11 +10,12 @@ import {
   ReduxImg,
   SpringImg,
 } from "./assets";
-import { PageInfo } from "@/typings";
+import { ITopTech, PageInfo } from "@/typings";
 import { urlFor } from "@/sanity";
 
 type Props = {
   pageInfo?: PageInfo | null;
+  topTech?: ITopTech[] | null;
 };
 
 const scaleVariants = {
@@ -28,10 +29,9 @@ const scaleVariants = {
   },
 };
 
-const Greetings = ({ pageInfo }: Props) => {
+const Greetings = ({ pageInfo, topTech }: Props) => {
   if (!pageInfo) {
-    // Handle the case when pageInfo is undefined
-    return <div>Loading...</div>; // or any other fallback UI
+    return <div>Loading...</div>;
   }
 
   return (
@@ -98,9 +98,9 @@ const Greetings = ({ pageInfo }: Props) => {
               whileInView={scaleVariants.whileInView}
               className="app__header-circles"
             >
-              {[ReactImg, NodeImg, ReduxImg, SpringImg].map((icons, index) => (
-                <div className="circle-cmp app__flex" key={index}>
-                  <img src={icons} alt="icons" />
+              {topTech?.map((icons) => (
+                <div className="circle-cmp" key={icons._id}>
+                  <img src={urlFor(icons.image).url()} alt={icons.title} />
                 </div>
               ))}
             </motion.div>

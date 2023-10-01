@@ -48,7 +48,7 @@ const AllProjects: React.FC<Props> = ({ projects }: Props) => {
 
   return (
     <>
-      <div className="absolute -mt-72 left-0 right-0 flex flex-row justify-center items-center flex-wrap mb-8 mx-0 z-10">
+      <div className="absolute -mt-64 left-0 right-0 flex flex-row justify-center items-center flex-wrap mb-8 mx-0 z-10">
         {categories.name.map((items, index) => (
           <div
             key={index}
