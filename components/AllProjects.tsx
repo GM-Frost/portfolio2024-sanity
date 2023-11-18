@@ -22,6 +22,15 @@ const AllProjects: React.FC<Props> = ({ projects }: Props) => {
   const [projectsData, setProjectsData] = useState<Project[]>([]);
   const [filterProjects, setFilterProjects] = useState<Project[]>([]);
 
+  const MAX_SUMMARY_LENGTH = 151;
+
+  const truncateSummary = (summary) => {
+    if (summary.length > MAX_SUMMARY_LENGTH) {
+      return summary.substring(0, MAX_SUMMARY_LENGTH) + "...";
+    }
+    return summary;
+  };
+
   const handleProjectFilter = (category: any) => {
     setActiveFilter(category);
     setProjectsData(projects);
@@ -117,7 +126,9 @@ const AllProjects: React.FC<Props> = ({ projects }: Props) => {
               </div>
               <div className="justify-center items-center text-center p-2 w-full relative flex-col ">
                 <h4 className="font-bold mt-4 leading-normal">{work?.title}</h4>
-                <p className="p-text mt-3 md:mt-5">{work?.summary}</p>
+                <p className="p-text mt-3 md:mt-5">
+                  {truncateSummary(work?.summary)}
+                </p>
 
                 <div className="relative mt-2 px-2  items-center justify-center text-center">
                   {work?.technologies.map((tech) => (
