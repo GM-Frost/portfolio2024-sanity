@@ -24,7 +24,7 @@ const AllProjects: React.FC<Props> = ({ projects }: Props) => {
 
   const MAX_SUMMARY_LENGTH = 151;
 
-  const truncateSummary = (summary) => {
+  const truncateSummary = (summary: string) => {
     if (summary.length > MAX_SUMMARY_LENGTH) {
       return summary.substring(0, MAX_SUMMARY_LENGTH) + "...";
     }
